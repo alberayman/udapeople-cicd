@@ -412,7 +412,7 @@ jobs:
             name: Remove old stacks and files
             command: |
               export STACKS=($(aws cloudformation list-stacks \
-                   --query "StackSummeries[*].StackName" \
+                   --query "StackSummaries[*].StackName" \
                    --stack-status-filter CREATE_COMPLETE --no-paginate --output text))
               echo Stack names: "${STACKS[@]}"
 
